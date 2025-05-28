@@ -168,11 +168,62 @@ To write a C Program to read and store the data of 3 employees and calculate the
 5.	Stop the program.
 
 ## PROGRAM
+```
+//Sudharsan S
+ //Reg no : 212224040334 
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+struct empinfo{
+    int id;
+    float salary;
+    float HRA;
+    float DA;
+    float grossSalary;
+    char name[20];
+};
+int main() {
+   int n,i=0;
+   printf("Enter the number of employees: ");
+   scanf("%d",&n);
+   struct empinfo v[n];
+   for(;i<n;i++){
+       printf("\nEmployee No: %d\n",i+1);
+       printf("\nEnter the name: ");
+       scanf(" %[^\n]",v[i].name);
+       printf("\nEnter the id number: ");
+       scanf("%d",&v[i].id);
+       printf("\nEnter the salary amt: ");
+       scanf("%f",&v[i].salary);
+       printf("\nEnter the HRA amt: ");
+       scanf("%f",&v[i].HRA);
+       printf("\nEnter the DA amt: ");
+       scanf("%f",&v[i].DA);
+       v[i].grossSalary = v[i].salary + v[i].HRA + v[i].DA; 
+   }
+   printf("\nID:          Employee name:          Salary:          Gross salary:\n\n");
+   for(int i=0;i<n;i++){
+       printf("%d",v[i].id);
+       int rlen = log10(v[i].id)+1;
+       for(int k=0;k<13-rlen;k++) printf(" ");
+       printf("%s",v[i].name);
+       int slen = strlen(v[i].name);
+       for(int k=0;k<24-slen;k++) printf(" ");
+       printf("%.2f",v[i].salary);
+       rlen = log10((int)v[i].salary)+1;
+       for(int k=0;k<17-rlen-2;k++) printf(" ");
+       printf("%.2f",v[i].grossSalary);
+      
+       printf("\n\n");
+   }
+}
 
+```
 
  ## OUTPUT
 
- 
+ ![image](https://github.com/user-attachments/assets/4423eba4-a795-4778-95cd-6b581b240cc2)
+
 
 ## RESULT
 
