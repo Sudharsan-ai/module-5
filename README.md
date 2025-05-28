@@ -10,9 +10,25 @@ To write a C Program to find area of rectangle using pointer.
 5.	Stop the program.
 
 ## PROGRAM
+```
+//Sudharsan S
+ //Reg no : 212224040334 
+#include <stdio.h>
+int main() {
+    float a,b;
+    float *ptr1 = &a;
+    float *ptr2 = &b;
+    printf("Enter the length of the rectangle: ");
+    scanf("%f",ptr1);
+    printf("\nEnter the width of the rectangle: ");
+    scanf("%f",ptr2);
+    printf("\nArea : %.2f",(*ptr1) * (*ptr2));
+}
 
+```
 ## OUTPUT
 		       	
+![image](https://github.com/user-attachments/assets/73c554a7-7376-4c21-afa5-048226a18015)
 
 
 ## RESULT
@@ -34,8 +50,29 @@ To write a C Program to print 'WELCOME' using malloc() and free().
 6.	Stop the program.
 
 ## PROGRAM
+```
+//Sudharsan S
+ //Reg no : 212224040334 
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+int main() {
+    char arr[100];
+    printf("Enter the string: ");
+    scanf("%[^\n]",arr);
+    int n = strlen(arr);
+    char *ptr = (char *) malloc (n*sizeof(char));
+    if(ptr==NULL) return 1;
+    strcpy(ptr,arr);
+    printf("\n");
+    for(int i = 0;i<n;i++) printf("%c",ptr[i]);
+    free(ptr);
+    
+}
 
+```
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/78df787f-842e-4626-906d-bc35378b1f31)
 
 
 
@@ -60,9 +97,53 @@ To write a C Program to store the student information and display it using struc
 4.	Stop the program.
 
 ## PROGRAM
+```
+//Sudharsan S
+ //Reg no : 212224040334 
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+struct stdinfo{
+    int rollno;
+    int mark[5];
+    char name[20];
+};
+int main() {
+   int n,i=0;
+   printf("Enter the number of students: ");
+   scanf("%d",&n);
+   struct stdinfo v[n];
+   for(;i<n;i++){
+       printf("\nEnter the name: ");
+       scanf(" %[^\n]",v[i].name);
+       printf("\nEnter the roll number: ");
+       scanf("%d",&v[i].rollno);
+       printf("\nEnter the marks for your 5 subjects:\n");
+       for(int j = 0;j<5;j++) scanf("%d",&v[i].mark[j]);
+   }
+   printf("\nRollnumber:        Student name:        subject marks:\n\n");
+   for(int i=0;i<n;i++){
+       printf("%d",v[i].rollno);
+       int rlen = log10(v[i].rollno)+1;
+       for(int k=0;k<19-rlen;k++) printf(" ");
+       printf("%s",v[i].name);
+       int slen = strlen(v[i].name);
+       for(int k=0;k<21-slen;k++) printf(" ");
+       
+       for(int j = 0;j<5;j++){
+       if(j==0)printf("%d",v[i].mark[j]);
+       else{
+           printf(", %d",v[i].mark[j]);
+       }
+       }
+       printf("\n\n");
+   }
+}
 
+```
 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/f5068287-3b2b-4f21-a614-19a52b5292b1)
 
 
 ## RESULT
