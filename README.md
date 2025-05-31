@@ -105,7 +105,7 @@ To write a C Program to store the student information and display it using struc
 #include <math.h>
 struct stdinfo{
     int rollno;
-    int mark[5];
+    float mark[5];
     char name[20];
 };
 int main() {
@@ -119,7 +119,7 @@ int main() {
        printf("\nEnter the roll number: ");
        scanf("%d",&v[i].rollno);
        printf("\nEnter the marks for your 5 subjects:\n");
-       for(int j = 0;j<5;j++) scanf("%d",&v[i].mark[j]);
+       for(int j = 0;j<5;j++) scanf("%f",&v[i].mark[j]);
    }
    printf("\nRollnumber:        Student name:        subject marks:\n\n");
    for(int i=0;i<n;i++){
@@ -131,19 +131,18 @@ int main() {
        for(int k=0;k<21-slen;k++) printf(" ");
        
        for(int j = 0;j<5;j++){
-       if(j==0)printf("%d",v[i].mark[j]);
+       if(j==0)printf("%.0f",v[i].mark[j]);
        else{
-           printf(", %d",v[i].mark[j]);
-       }
-       }
+           printf(", %.0f",v[i].mark[j]);
+       } }
        printf("\n\n");
    }
 }
-
 ```
 
 ## OUTPUT
-![image](https://github.com/user-attachments/assets/f5068287-3b2b-4f21-a614-19a52b5292b1)
+![image](https://github.com/user-attachments/assets/250c1e67-a0dd-4291-8881-151542c5b28f)
+
 
 
 ## RESULT
