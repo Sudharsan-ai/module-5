@@ -313,7 +313,8 @@ int main() {
 
 ## OUTPUT
 
- ![image](https://github.com/user-attachments/assets/01278041-b22c-4f6b-b514-f55fe8a6be0d)
+ ![image](https://github.com/user-attachments/assets/1939f300-dfa7-4a25-aba7-c85ad9f023e2)
+
 
 
 ## RESULT
