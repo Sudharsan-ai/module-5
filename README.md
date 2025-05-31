@@ -275,8 +275,8 @@ struct student
 {
     char name[10];
     int rollno;         
-    int subject[5];     
-    int total;         
+    float subject[5];     
+    float total;         
     float average;      
 };
 
@@ -289,11 +289,11 @@ int main() {
         scanf("%s", s[i].name);
         printf("Enter roll number: ");
         scanf("%d", &s[i].rollno);
-        printf("Enter marks for 5 subjects: ");
+        printf("Enter marks for 5 subjects: \n");
         for(j = 0; j < 5; j++) {
-            scanf("%d", &s[i].subject[j]);
+            scanf("%f", &s[i].subject[j]);
         }
-        s[i].total = 0;
+        s[i].total = 0.00;
         for(j = 0; j < 5; j++) {
             s[i].total += s[i].subject[j];
         }
@@ -303,7 +303,7 @@ int main() {
     }
     for(i = 0; i < 2; i++) {
         printf("\nStudent %d:\n", i + 1);
-        printf("Total marks: %d\n", s[i].total);
+        printf("Total marks: %.2f\n", s[i].total);
         printf("Average marks: %.2f\n", s[i].average);
     }
 
